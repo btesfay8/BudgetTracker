@@ -9,13 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.orange)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                NavigationLink(destination: BudgetTrackerView()) {
+                    Text("Welcome to the Budget Tracker App")
+                        .frame(width: 250, height: 500, alignment: .center)
+                        .background(Color.orange)
+                        .foregroundColor(.black)
+                        .cornerRadius(20)
+                        .font(.title3)
+                }
+            }
         }
-        .padding()
     }
 }
 
