@@ -60,15 +60,10 @@ struct BudgetTrackerView: View {
                 }
             }
             
-            Spacer() // Button on bottom
-
-            HStack {
-                // Navigation link to AddExpenseView
-                NavigationLink(destination: AddExpenseView(expenses: $expenses)
-                    .onDisappear {
-                        checkBudget() // Check the budget after the AddExpenseView disappears
-                    }
-                ) {
+            Spacer() //Add button on bottom
+            
+            HStack{
+                NavigationLink(destination: AddExpenseView(expenses: $expenses, expenseAdded: checkBudget)) {
                     Text("Add")
                         .font(.title)
                         .padding(.vertical, 20)
@@ -112,6 +107,7 @@ struct BudgetTrackerView: View {
                             checkBudget() // Ensure the budget is checked after saving
                         }
                     }
+                    .padding()
                     Button("Cancel") {
                         showPopUp = false
                     }
