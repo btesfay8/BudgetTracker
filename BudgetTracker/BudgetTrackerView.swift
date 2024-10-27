@@ -9,16 +9,21 @@ import SwiftUI
 
 struct BudgetTrackerView: View {
     // A list of categories
-    let categories = ["Entertainment", "Food", "Housing"]
+    let categories = ["Food", "Entertainment", "Housing", "Transportation", "Misc"]
     
-    @State private var expenses: [Expense] = []
-    @State private var maxBudget : Double? //not set at first
-    @State private var showPopUp = false //pop up for setting budget
-    @State private var limit : String = ""
-    @State private var showAlert = false //show if exceed budget
+    @State private var expenses: [Expense] = [] // List of all expenses
+    @State private var maxBudget: Double? // Not set at first
+    @State private var showPopUp = false // Pop-up for setting budget
+    @State private var limit: String = "" // Holds the budget limit input
+    @State private var showAlert = false // Show if budget exceeded
     
     // State variable to hold the selected category
     @State private var selectedCategory = "Entertainment"
+    
+    // Function to filter expenses by selected category
+    var filteredExpenses: [Expense] {
+        expenses.filter { $0.category == selectedCategory }
+    }
     
     var body: some View {
         VStack {
@@ -39,10 +44,10 @@ struct BudgetTrackerView: View {
                 .font(.headline)
                 .padding()
             
-            //List the added expenses
-            List(expenses) {expense in
-                HStack{
-                    VStack{
+            // List of filtered expenses
+            List(filteredExpenses) { expense in
+                HStack {
+                    VStack(alignment: .leading) {
                         Text(expense.name)
                             .font(.headline)
                         Text(expense.category)
@@ -68,9 +73,10 @@ struct BudgetTrackerView: View {
                         .cornerRadius(20)
                 }
                 .padding(.leading, 20)
+
                 Spacer()
-                
-                Button(action: {showPopUp.toggle()}) {
+
+                Button(action: { showPopUp.toggle() }) {
                     Text("Set Limit")
                         .font(.title)
                         .padding(.vertical, 20)
@@ -80,9 +86,11 @@ struct BudgetTrackerView: View {
                         .cornerRadius(20)
                 }
             }
+
         }
         .padding()
         .sheet(isPresented: $showPopUp) {
+            // Pop-up to set the budget limit
             VStack {
                 Text("Set Budget Limit")
                     .font(.headline)
@@ -96,7 +104,7 @@ struct BudgetTrackerView: View {
                             maxBudget = limitVal
                             limit = ""
                             showPopUp = false
-                            checkBudget()
+                            checkBudget() // Ensure the budget is checked after saving
                         }
                     }
                     .padding()
@@ -107,20 +115,24 @@ struct BudgetTrackerView: View {
             }
         }
         .alert(isPresented: $showAlert) {
-            Alert(title : Text("Budget Exceeded"), message: Text("You have exceed \(maxBudget ?? 0, specifier: "%.2f")"), dismissButton: .default(Text("Ok")))
+            Alert(title: Text("Budget Exceeded"),
+                  message: Text("You have exceeded your budget of \(maxBudget ?? 0, specifier: "%.2f")"),
+                  dismissButton: .default(Text("Ok")))
         }
     }
+    
+    // Function to calculate total expenses
     private func totalExpenses() -> Double {
-        var total = 0.0
-        for expense in expenses {
-            total += expense.amount
-        }
-        return total
+        return expenses.reduce(0) { $0 + $1.amount }
     }
+    
+    // Function to check if the total expenses exceed the budget
     private func checkBudget() {
         let total = totalExpenses()
         if let limit = maxBudget, total > limit {
             showAlert = true
+        } else {
+            showAlert = false // Reset alert if within budget
         }
     }
 }
