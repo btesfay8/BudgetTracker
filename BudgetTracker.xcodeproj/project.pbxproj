@@ -24,7 +24,7 @@
 		70F9A19C2CBEE87D00E23C4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		70F9A1A52CC825E300E23C4B /* BudgetTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTrackerView.swift; sourceTree = "<group>"; };
 		F3642EF62CCEA65B008E0377 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Expense.swift; path = ../Expense.swift; sourceTree = "<group>"; };
-		F3642EF82CCEA697008E0377 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		F3642EF82CCEA697008E0377 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddExpenseView.swift; path = ../AddExpenseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,6 @@
 		70F9A1892CBEE87A00E23C4B = {
 			isa = PBXGroup;
 			children = (
-				F3642EF82CCEA697008E0377 /* AddExpenseView.swift */,
 				70F9A1942CBEE87A00E23C4B /* BudgetTracker */,
 				70F9A1932CBEE87A00E23C4B /* Products */,
 			);
@@ -58,6 +57,7 @@
 		70F9A1942CBEE87A00E23C4B /* BudgetTracker */ = {
 			isa = PBXGroup;
 			children = (
+				F3642EF82CCEA697008E0377 /* AddExpenseView.swift */,
 				70F9A1952CBEE87A00E23C4B /* BudgetTrackerApp.swift */,
 				F3642EF62CCEA65B008E0377 /* Expense.swift */,
 				70F9A1972CBEE87A00E23C4B /* ContentView.swift */,
