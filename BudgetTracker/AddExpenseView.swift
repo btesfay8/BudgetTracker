@@ -11,7 +11,7 @@ struct AddExpenseView: View {
     @Binding var expenses: [Expense]
     @State private var name: String = ""
     @State private var amount: String = ""
-    @State private var selectedCategory: String = ""
+    @State private var selectedCategory: String = "Food" //default
     let categories = ["Food", "Entertainment", "Housing", "Transportation", "Misc"]
     @Environment(\.dismiss) var dismiss
     
@@ -35,7 +35,7 @@ struct AddExpenseView: View {
             .navigationBarItems(leading: Button("Cancel") {
                 dismiss()
             }, trailing: Button("Submit") {
-                if let amountValue = Double(amount) {
+                if let amountValue = Double(amount), !name.isEmpty, !selectedCategory.isEmpty {
                     let newExpense = Expense(name: name, amount: amountValue, category: selectedCategory)
                     expenses.append(newExpense)
                     dismiss() //look up and comment this

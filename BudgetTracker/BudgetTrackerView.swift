@@ -34,6 +34,24 @@ struct BudgetTrackerView: View {
                 .font(.headline)
                 .padding()
             
+            //List the added expenses
+            List(expenses) {expense in
+                HStack{
+                    VStack{
+                        Text(expense.name)
+                            .font(.headline)
+                        Text(expense.category)
+                            .font(.subheadline)
+                    }
+                    Spacer()
+                    Text("\(expense.amount, specifier: "%.2f")")
+                        .font(.subheadline)
+                        .foregroundColor(.blue)
+
+                }
+            }
+            
+            
             Spacer() //button on bottom
             
             HStack{
