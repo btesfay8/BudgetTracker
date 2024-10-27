@@ -13,3 +13,4 @@ struct Expense : Identifiable {
     var amount: Double
     var category: String
 }
+

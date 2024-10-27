@@ -12,6 +12,8 @@
 		70F9A19A2CBEE87D00E23C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F9A1992CBEE87D00E23C4B /* Assets.xcassets */; };
 		70F9A19D2CBEE87D00E23C4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F9A19C2CBEE87D00E23C4B /* Preview Assets.xcassets */; };
 		70F9A1A62CC825E300E23C4B /* BudgetTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A1A52CC825E300E23C4B /* BudgetTrackerView.swift */; };
+		F3456A922CCEB64300FE571F /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3456A912CCEB64300FE571F /* Expense.swift */; };
+		F3456A942CCEB6E100FE571F /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3456A932CCEB6E100FE571F /* AddExpenseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		70F9A1992CBEE87D00E23C4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70F9A19C2CBEE87D00E23C4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		70F9A1A52CC825E300E23C4B /* BudgetTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTrackerView.swift; sourceTree = "<group>"; };
+		F3456A912CCEB64300FE571F /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		F3456A932CCEB6E100FE571F /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				70F9A1952CBEE87A00E23C4B /* BudgetTrackerApp.swift */,
+				F3456A932CCEB6E100FE571F /* AddExpenseView.swift */,
+				F3456A912CCEB64300FE571F /* Expense.swift */,
 				70F9A1972CBEE87A00E23C4B /* ContentView.swift */,
 				70F9A1992CBEE87D00E23C4B /* Assets.xcassets */,
 				70F9A19B2CBEE87D00E23C4B /* Preview Content */,
@@ -142,7 +148,9 @@
 			files = (
 				70F9A1982CBEE87A00E23C4B /* ContentView.swift in Sources */,
 				70F9A1A62CC825E300E23C4B /* BudgetTrackerView.swift in Sources */,
+				F3456A942CCEB6E100FE571F /* AddExpenseView.swift in Sources */,
 				70F9A1962CBEE87A00E23C4B /* BudgetTrackerApp.swift in Sources */,
+				F3456A922CCEB64300FE571F /* Expense.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
