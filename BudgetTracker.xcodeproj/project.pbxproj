@@ -12,7 +12,6 @@
 		70F9A19A2CBEE87D00E23C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F9A1992CBEE87D00E23C4B /* Assets.xcassets */; };
 		70F9A19D2CBEE87D00E23C4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F9A19C2CBEE87D00E23C4B /* Preview Assets.xcassets */; };
 		70F9A1A62CC825E300E23C4B /* BudgetTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A1A52CC825E300E23C4B /* BudgetTrackerView.swift */; };
-		F3642EF72CCEA65B008E0377 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3642EF62CCEA65B008E0377 /* Expense.swift */; };
 		F3642EF92CCEA697008E0377 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3642EF82CCEA697008E0377 /* AddExpenseView.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +22,6 @@
 		70F9A1992CBEE87D00E23C4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70F9A19C2CBEE87D00E23C4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		70F9A1A52CC825E300E23C4B /* BudgetTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTrackerView.swift; sourceTree = "<group>"; };
-		F3642EF62CCEA65B008E0377 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Expense.swift; path = ../Expense.swift; sourceTree = "<group>"; };
 		F3642EF82CCEA697008E0377 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddExpenseView.swift; path = ../AddExpenseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +57,6 @@
 			children = (
 				F3642EF82CCEA697008E0377 /* AddExpenseView.swift */,
 				70F9A1952CBEE87A00E23C4B /* BudgetTrackerApp.swift */,
-				F3642EF62CCEA65B008E0377 /* Expense.swift */,
 				70F9A1972CBEE87A00E23C4B /* ContentView.swift */,
 				70F9A1992CBEE87D00E23C4B /* Assets.xcassets */,
 				70F9A19B2CBEE87D00E23C4B /* Preview Content */,
@@ -146,7 +143,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3642EF72CCEA65B008E0377 /* Expense.swift in Sources */,
 				70F9A1982CBEE87A00E23C4B /* ContentView.swift in Sources */,
 				F3642EF92CCEA697008E0377 /* AddExpenseView.swift in Sources */,
 				70F9A1A62CC825E300E23C4B /* BudgetTrackerView.swift in Sources */,
