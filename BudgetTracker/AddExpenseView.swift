@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddExpenseView: View {
     @Binding var expenses: [Expense]
+    var expenseAdded: () -> Void
     @State private var name: String = ""
     @State private var amount: String = ""
     @State private var selectedCategory: String = "Food" //default
@@ -38,6 +39,7 @@ struct AddExpenseView: View {
                 if let amountValue = Double(amount), !name.isEmpty, !selectedCategory.isEmpty {
                     let newExpense = Expense(name: name, amount: amountValue, category: selectedCategory)
                     expenses.append(newExpense)
+                    expenseAdded()
                     dismiss() //look up and comment this
                 }
             })
@@ -45,5 +47,5 @@ struct AddExpenseView: View {
     }
 }
 #Preview {
-    AddExpenseView(expenses: .constant([]))
+    AddExpenseView(expenses: .constant([]), expenseAdded: {})
 }

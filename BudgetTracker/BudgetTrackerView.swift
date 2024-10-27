@@ -55,11 +55,10 @@ struct BudgetTrackerView: View {
                 }
             }
             
-            
-            Spacer() //button on bottom
+            Spacer() //Add button on bottom
             
             HStack{
-                NavigationLink(destination: AddExpenseView(expenses: $expenses)) {
+                NavigationLink(destination: AddExpenseView(expenses: $expenses, expenseAdded: checkBudget)) {
                     Text("Add")
                         .font(.title)
                         .padding(.vertical, 20)
@@ -97,8 +96,10 @@ struct BudgetTrackerView: View {
                             maxBudget = limitVal
                             limit = ""
                             showPopUp = false
+                            checkBudget()
                         }
                     }
+                    .padding()
                     Button("Cancel") {
                         showPopUp = false
                     }
