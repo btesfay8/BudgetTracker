@@ -10,6 +10,7 @@ import SwiftUI
 struct BudgetTrackerView: View {
     // A list of categories
     let categories = ["Entertainment", "Food", "Housing"]
+    @State private var expenses: [Expense] = []
     
     // State variable to hold the selected category
     @State private var selectedCategory = "Entertainment"
@@ -33,7 +34,40 @@ struct BudgetTrackerView: View {
                 .font(.headline)
                 .padding()
             
-            Spacer()
+            //List the added expenses
+            List(expenses) {expense in
+                HStack{
+                    VStack{
+                        Text(expense.name)
+                            .font(.headline)
+                        Text(expense.category)
+                            .font(.subheadline)
+                    }
+                    Spacer()
+                    Text("\(expense.amount, specifier: "%.2f")")
+                        .font(.subheadline)
+                        .foregroundColor(.blue)
+
+                }
+            }
+            
+            
+            Spacer() //button on bottom
+            
+            HStack{
+                NavigationLink(destination: AddExpenseView(expenses: $expenses)) {
+                    Text("Add")
+                        .font(.title)
+                        .padding()
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.orange)
+                        .cornerRadius(20)
+                }
+                .padding(.leading, 50)
+                Spacer()
+            }
+            
         }
         .padding()
     }
